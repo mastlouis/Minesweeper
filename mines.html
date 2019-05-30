@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Minesweeper | Alpha
+        </title>
+        <meta charset="UTF-8">
+        
+        <!-- The line below this is where you would change the CSS file to your own file-->
+        <link rel = "stylesheet" href = "default.css" type = "text/css"/>
+    </head>
+    <body>
+
+        <h1>Welcome to Minesweeper!</h1>
+        <p>If you don't know how to play already, there isn't much I can do for you.</p>
+        <p>Click to trip a tile. Right-click to flag a tile. (This is holding down on a smart phone.)
+            I know that this brings up the menu, and it's probably very annoying. 
+            JavaScript doesn't seem to have a right-click event, at least not one that I could find.
+            I tried auxclick, and Safari wasn't happy.
+        </p>
+        <p>Right now, I'm only going to make it work with 16 mines.</p>
+        <p id = "status">Good luck!</p>
+        <button id = "NewGame">New Game '_'</button>
+        <button id = giveup>Give up</button>
+        <div>
+            <table id = gameboard>
+                <tr>
+                    <td><button id = "A0" class = unclicked></button></td>
+                    <td><button id = "A1" class = unclicked></button></td>
+                    <td><button id = "A2" class = unclicked></button></td>
+                    <td><button id = "A3" class = unclicked></button></td>
+                    <td><button id = "A4" class = unclicked></button></td>
+                    <td><button id = "A5" class = unclicked></button></td>
+                    <td><button id = "A6" class = unclicked></button></td>
+                    <td><button id = "A7" class = unclicked></button></td>
+                    <td><button id = "A8" class = unclicked></button></td>
+                    <td><button id = "A9" class = unclicked></button></td>
+                </tr>
+                <tr>
+                    <td><button id = "B0" class = unclicked></button></td>
+                    <td><button id = "B1" class = unclicked></button></td>
+                    <td><button id = "B2" class = unclicked></button></td>
+                    <td><button id = "B3" class = unclicked></button></td>
+                    <td><button id = "B4" class = unclicked></button></td>
+                    <td><button id = "B5" class = unclicked></button></td>
+                    <td><button id = "B6" class = unclicked></button></td>
+                    <td><button id = "B7" class = unclicked></button></td>
+                    <td><button id = "B8" class = unclicked></button></td>
+                    <td><button id = "B9" class = unclicked></button></td>
+                </tr>
+                <tr>
+                    <td><button id = "C0" class = unclicked></button></td>
+                    <td><button id = "C1" class = unclicked></button></td>
+                    <td><button id = "C2" class = unclicked></button></td>
+                    <td><button id = "C3" class = unclicked></button></td>
+                    <td><button id = "C4" class = unclicked></button></td>
+                    <td><button id = "C5" class = unclicked></button></td>
+                    <td><button id = "C6" class = unclicked></button></td>
+                    <td><button id = "C7" class = unclicked></button></td>
+                    <td><button id = "C8" class = unclicked></button></td>
+                    <td><button id = "C9" class = unclicked></button></td>
+                </tr>  
+                <tr>
+                    <td><button id = "D0" class = unclicked></button></td>
+                    <td><button id = "D1" class = unclicked></button></td>
+                    <td><button id = "D2" class = unclicked></button></td>
+                    <td><button id = "D3" class = unclicked></button></td>
+                    <td><button id = "D4" class = unclicked></button></td>
+                    <td><button id = "D5" class = unclicked></button></td>
+                    <td><button id = "D6" class = unclicked></button></td>
+                    <td><button id = "D7" class = unclicked></button></td>
+                    <td><button id = "D8" class = unclicked></button></td>
+                    <td><button id = "D9" class = unclicked></button></td>
+                </tr> 
+                <tr>
+                    <td><button id = "E0" class = unclicked></button></td>
+                    <td><button id = "E1" class = unclicked></button></td>
+                    <td><button id = "E2" class = unclicked></button></td>
+                    <td><button id = "E3" class = unclicked></button></td>
+                    <td><button id = "E4" class = unclicked></button></td>
+                    <td><button id = "E5" class = unclicked></button></td>
+                    <td><button id = "E6" class = unclicked></button></td>
+                    <td><button id = "E7" class = unclicked></button></td>
+                    <td><button id = "E8" class = unclicked></button></td>
+                    <td><button id = "E9" class = unclicked></button></td>
+                </tr> 
+                <tr>
+                    <td><button id = "F0" class = unclicked></button></td>
+                    <td><button id = "F1" class = unclicked></button></td>
+                    <td><button id = "F2" class = unclicked></button></td>
+                    <td><button id = "F3" class = unclicked></button></td>
+                    <td><button id = "F4" class = unclicked></button></td>
+                    <td><button id = "F5" class = unclicked></button></td>
+                    <td><button id = "F6" class = unclicked></button></td>
+                    <td><button id = "F7" class = unclicked></button></td>
+                    <td><button id = "F8" class = unclicked></button></td>
+                    <td><button id = "F9" class = unclicked></button></td>
+                </tr> 
+                <tr>
+                    <td><button id = "G0" class = unclicked></button></td>
+                    <td><button id = "G1" class = unclicked></button></td>
+                    <td><button id = "G2" class = unclicked></button></td>
+                    <td><button id = "G3" class = unclicked></button></td>
+                    <td><button id = "G4" class = unclicked></button></td>
+                    <td><button id = "G5" class = unclicked></button></td>
+                    <td><button id = "G6" class = unclicked></button></td>
+                    <td><button id = "G7" class = unclicked></button></td>
+                    <td><button id = "G8" class = unclicked></button></td>
+                    <td><button id = "G9" class = unclicked></button></td>
+                </tr> 
+                <tr>
+                    <td><button id = "H0" class = unclicked></button></td>
+                    <td><button id = "H1" class = unclicked></button></td>
+                    <td><button id = "H2" class = unclicked></button></td>
+                    <td><button id = "H3" class = unclicked></button></td>
+                    <td><button id = "H4" class = unclicked></button></td>
+                    <td><button id = "H5" class = unclicked></button></td>
+                    <td><button id = "H6" class = unclicked></button></td>
+                    <td><button id = "H7" class = unclicked></button></td>
+                    <td><button id = "H8" class = unclicked></button></td>
+                    <td><button id = "H9" class = unclicked></button></td>
+                </tr> 
+                <tr>
+                    <td><button id = "I0" class = unclicked></button></td>
+                    <td><button id = "I1" class = unclicked></button></td>
+                    <td><button id = "I2" class = unclicked></button></td>
+                    <td><button id = "I3" class = unclicked></button></td>
+                    <td><button id = "I4" class = unclicked></button></td>
+                    <td><button id = "I5" class = unclicked></button></td>
+                    <td><button id = "I6" class = unclicked></button></td>
+                    <td><button id = "I7" class = unclicked></button></td>
+                    <td><button id = "I8" class = unclicked></button></td>
+                    <td><button id = "I9" class = unclicked></button></td>
+                </tr> 
+                <tr>
+                    <td><button id = "J0" class = unclicked></button></td>
+                    <td><button id = "J1" class = unclicked></button></td>
+                    <td><button id = "J2" class = unclicked></button></td>
+                    <td><button id = "J3" class = unclicked></button></td>
+                    <td><button id = "J4" class = unclicked></button></td>
+                    <td><button id = "J5" class = unclicked></button></td>
+                    <td><button id = "J6" class = unclicked></button></td>
+                    <td><button id = "J7" class = unclicked></button></td>
+                    <td><button id = "J8" class = unclicked></button></td>
+                    <td><button id = "J9" class = unclicked></button></td>
+                </tr> 
+            </table>
+        </div>
+        <script src = gameFunction.js></script>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+*{
+    background-color:silver;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1{
+    color:navy;
+    font-size: 3em;
+    text-align: center;
+    font: cursive, sans-serif;
+}
+
+#gameboard{
+    margin: 0 auto;
+    padding: 0;
+    /*border-width: 0.5em;*/
+    border-color: black;
+    border-collapse: collapse;
+}
+
+.unclicked, .flag, .falseFlag, .mine{
+    border: 0.3em outset;
+    margin: 0;
+    padding: 0;
+    height: 2em;
+    width: 2em;
+}
+
+.mineHit, .one, .two, .three, .four, .five, .six, .seven, .eight, .zero{
+    border: 0.15em solid grey;
+    margin: 0;
+    padding: 0;
+    height: 2em;
+    width: 2em;
+}
+
+.unclicked{
+    background-color: whitesmoke;
+}
+
+.unclicked:hover{
+    background-color: lightyellow;
+}
+
+.mine{
+    background-color: darkgrey;
+    color: black;
+}
+
+.mineHit{
+    background-color: red;
+    color: black;
+}
+
+.one{
+    background-color: darkgrey;
+    color: blue;
+}
+
+.two{
+    background-color: darkgrey;
+    color: green;
+}
+
+.three{
+    background-color: darkgrey;
+    color: red;
+}
+
+.four{
+    background-color: darkgrey;
+    color: darkblue;
+}
+
+.five{
+    background-color: darkgrey;
+    color: darkred;
+}
+
+.six{
+    background-color: darkgrey;
+    color: teal;
+}
+
+.seven{
+    background-color: darkgrey;
+    color: black;
+}
+
+.eight{
+    background-color: darkgrey;
+    color: lightgrey;
+}
+
+.zero{
+    background-color: darkgrey;
+    color: yellow;
+}
+
+.error{
+    background-color: darkred;
+    color: brown;
+}
+
+.flag{
+    background-color: lightblue;
+    color: red;
+}
