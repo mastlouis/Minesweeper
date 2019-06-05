@@ -347,3 +347,9 @@ newGame = function(){
 
 //Begin code to execute
 initializeGame();
+
+document.oncontextmenu = function(){
+    //if()
+        return false;
+    //return true;
+}
